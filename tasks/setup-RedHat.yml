@@ -14,3 +14,8 @@
   package:
     name: logstash
     state: present
+
+- name: Install Logstash service.
+  command: >
+    ./bin/system-install 
+    chdir={{ logstash_dir }}
