@@ -15,8 +15,12 @@
     name: logstash
     state: present
 
+# - name: Check if Logstash service is already installed.
+#   stat: path=/etc/init.d/logstash
+#   register: logstash_installed
+
 - name: Check if Logstash service is already installed.
-  stat: path=/etc/init.d/logstash
+  stat: path=/etc/systemd/system/logstash.service
   register: logstash_installed
 
 - name: Install Logstash service.
